@@ -1360,6 +1360,27 @@ textarea {
 	color: #F8DA00;
 }
 
+.standards .title {
+	text-align: left;
+}
+
+.standards__list1 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0px -2px;
+	margin-top: -4px;
+}
+
+.standards__list1 li {
+	padding: 8px 15px;
+	color: #000;
+	background-color: #F8DA00;
+	margin: 0px 2px;
+	margin-top: 4px;
+}
+
 @media only screen and (min-width: 1101px) {
 	.header__nav {
 		display: block !important;
