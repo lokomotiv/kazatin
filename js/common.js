@@ -119,10 +119,40 @@ $(document).ready(function () {
 		$('.header__nav').fadeToggle();
 	});
 
-	var trainer = document.getElementById('trainer-bg1');
-	var parallaxInstance = new Parallax(trainer);
+	if ($(".trainer-bg1").length > 0) {
+		var trainer = document.getElementById('trainer-bg1');
+		var parallaxInstance1 = new Parallax(trainer);
+	}
 
-	var trainer = document.getElementById('trainer-bg2');
-	var parallaxInstance = new Parallax(trainer);
+	if ($(".trainer-bg2").length > 0) {
+		var trainer = document.getElementById('trainer-bg2');
+		var parallaxInstance2 = new Parallax(trainer);
+	}
+
+	$('ul.js-standards-list1 a').click(function (e) {
+		e.preventDefault();
+		$('ul.js-standards-list1 .active').removeClass('active');
+		$(this).addClass('active');
+		var tab = $(this).attr('href');
+		$('.standards__tab1').not(tab).css({ 'display': 'none' });
+		$(tab).fadeIn(400);
+	});
+
+	// табы
+
+	$('[data-tabs-list] a').click(function (e) {
+		e.preventDefault();
+
+		let target = $(this).attr('href');
+		let tabs = $(this).closest('[data-tabs-list]').attr('data-tabs-list');
+
+		$(this).closest('[data-tabs-list]').find('a').removeClass('active').removeClass('active-prev');
+		$(this).addClass('active');
+		$(this).closest('li').prev().find('a').addClass('active-prev');
+
+		$("." + tabs).find('[data-tab]').css({ "display": "none" });
+
+		$(target).fadeIn();
+	});
 
 });
