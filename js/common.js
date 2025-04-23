@@ -146,9 +146,8 @@ $(document).ready(function () {
 		let target = $(this).attr('href');
 		let tabs = $(this).closest('[data-tabs-list]').attr('data-tabs-list');
 
-		$(this).closest('[data-tabs-list]').find('a').removeClass('active').removeClass('active-prev');
+		$(this).closest('[data-tabs-list]').find('a').removeClass('active');
 		$(this).addClass('active');
-		$(this).closest('li').prev().find('a').addClass('active-prev');
 
 		$("." + tabs).find('[data-tab]').css({ "display": "none" });
 
