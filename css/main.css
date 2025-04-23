@@ -1396,6 +1396,10 @@ textarea {
 	background-color: #F8DA00;
 }
 
+[data-tab] {
+	display: none;
+}
+
 .standards__tab1 {
 	display: none;
 }
